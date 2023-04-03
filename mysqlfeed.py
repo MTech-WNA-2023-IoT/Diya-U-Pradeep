@@ -1,15 +1,15 @@
 #Import pymysql module library
 import pymysql
 #Create a connection to MySQL Database 
-conn =pymysql.connect(database="databasename",user="user",password="password",host="localhost")
+conn =pymysql.connect(database="iot_diya",user="diyaupradeep",password="diyaupradeep",host="localhost")
 #Create a MySQL Cursor to that executes the SQLs
 cur=conn.cursor()
 #Create a dictonary containing the fields, name, age and place
 data={'topic':'temp','data':29.5}
 #Execute the SQL to write data to the database
-cur.execute("INSERT INTO <tablename>(name, age, place)VALUES(%(name)s,%(age)s,%(place)s);",data)
+cur.execute("INSERT INTO iot_data(topic,data)VALUES(%(topic)s,%(data)s;",data)
 #Close the cursor
-cur.close()
+#cur.close()
 #Commit the data to the database
 conn.commit()
 #Close the connection to the database
