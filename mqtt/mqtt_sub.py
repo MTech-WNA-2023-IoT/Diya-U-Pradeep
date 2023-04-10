@@ -33,4 +33,4 @@ mqttclient.connect(broker, port, keepalive=1, bind_address="")
   
 mqttclient.on_connect = _on_connect
 
-mqttclient.loop_forever(
+mqttclient.loop_forever()
