@@ -6,6 +6,7 @@ global broker;
 global port;
 
 
+
 broker = "34.93.250.163";
 port = 1883;
 
@@ -24,12 +25,12 @@ def _on_message(client, userdata, msg):
 # 	print("Received: Topic: %s Body: %s", msg.topic, msg.payload)
 	print(msg.topic+" "+str(msg.payload))
 	
-d=test(message)
+
 conn =pymysql.connect(database="iot_diya",user="diyaupradeep",password="diyaupradeep",host="localhost")
 #Create a MySQL Cursor to that executes the SQLs
 cur=conn.cursor()
 #Create a dictonary containing the fields, name, age and place
-data={'topic':'IOT/test','data':'d'}
+data={'topic':'IOT/test','data':'33'}
 #Execute the SQL to write data to the database
 cur.execute("INSERT INTO `iot_data`(`topic`,`data`)VALUES(%(topic)s,%(data)s);",data)
 #Close the cursor
