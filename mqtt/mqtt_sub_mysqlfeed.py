@@ -23,7 +23,7 @@ def _on_message(client, userdata, msg):
 # 	print("Received: Topic: %s Body: %s", msg.topic, msg.payload)
 	print(msg.topic+" "+str(msg.payload))
   
-  conn =pymysql.connect(database="iot_diya",user="diyaupradeep",password="diyaupradeep",host="localhost")
+conn =pymysql.connect(database="iot_diya",user="diyaupradeep",password="diyaupradeep",host="localhost")
 #Create a MySQL Cursor to that executes the SQLs
 cur=conn.cursor()
 #Create a dictonary containing the fields, name, age and place
