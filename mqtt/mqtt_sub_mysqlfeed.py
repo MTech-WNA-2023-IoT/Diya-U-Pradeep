@@ -19,6 +19,7 @@ def test(client, userdata, message):
   print("message:"+ str(message.payload))
 
 
+
 def _on_message(client, userdata, msg):
 # 	print("Received: Topic: %s Body: %s", msg.topic, msg.payload)
 	print(msg.topic+" "+str(msg.payload))
@@ -27,7 +28,7 @@ conn =pymysql.connect(database="iot_diya",user="diyaupradeep",password="diyaupra
 #Create a MySQL Cursor to that executes the SQLs
 cur=conn.cursor()
 #Create a dictonary containing the fields, name, age and place
-data={'topic':'IOT/test','data':(test)}
+data={'topic':'IOT/test','data':str(message.payload)}
 #Execute the SQL to write data to the database
 cur.execute("INSERT INTO `iot_data`(`topic`,`data`)VALUES(%(topic)s,%(data)s);",data)
 #Close the cursor
@@ -50,5 +51,5 @@ mqttclient.connect(broker, port, keepalive=1, bind_address="")
 mqttclient.on_connect = _on_connect
 
 mqttclient.loop_forever()
-
+conn.close()
 
