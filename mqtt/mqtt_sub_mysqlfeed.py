@@ -35,7 +35,7 @@ cur.execute("INSERT INTO `iot_data`(`topic`,`data`)VALUES(%(topic)s,%(data)s);",
 #Commit the data to the database
 conn.commit()
 #Close the connection to the database
-conn.close()
+#conn.close()
 	 
 #Subscribed Topics 
 def _on_connect(mqttclient, userdata, flags, rc):
