@@ -7,7 +7,7 @@ global port;
 
 
 
-broker = "34.93.250.163";
+broker = "34.93.54.122";
 port = 1883;
 
 client_uniq = "pubclient_123"
@@ -30,7 +30,7 @@ conn =pymysql.connect(database="iot_diya",user="diyaupradeep",password="diyaupra
 #Create a MySQL Cursor to that executes the SQLs
 cur=conn.cursor()
 #Create a dictonary containing the fields, name, age and place
-data={'topic':'IOT/test','data':'45'}
+data={'topic':'IOT/test','data':'payload'}
 #Execute the SQL to write data to the database
 cur.execute("INSERT INTO `iot_data`(`topic`,`data`)VALUES(%(topic)s,%(data)s);",data)
 #Close the cursor
