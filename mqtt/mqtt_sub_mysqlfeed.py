@@ -19,7 +19,7 @@ def test(client, userdata, message):
   print("userdata:"+ str(userdata))
   print("message:"+ str(message.payload))
 
-payload=float(messaage.payload)
+payload=float(message.payload)
 conn =pymysql.connect(database="iot_diya",user="diyaupradeep",password="diyaupradeep",host="localhost")
 #Create a MySQL Cursor to that executes the SQLs
 cur=conn.cursor()
