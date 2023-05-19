@@ -19,13 +19,7 @@ def test(client, userdata, message):
   print("userdata:"+ str(userdata))
   print("message:"+ str(message.payload))
 
-
-
-def _on_message(client, userdata, msg):
-# 	print("Received: Topic: %s Body: %s", msg.topic, msg.payload)
-	print(msg.topic+" "+str(msg.payload))
-	
-
+payload=float(messaage.payload)
 conn =pymysql.connect(database="iot_diya",user="diyaupradeep",password="diyaupradeep",host="localhost")
 #Create a MySQL Cursor to that executes the SQLs
 cur=conn.cursor()
@@ -37,8 +31,15 @@ cur.execute("INSERT INTO `iot_data`(`topic`,`data`)VALUES(%(topic)s,%(data)s);",
 #cur.close()
 #Commit the data to the database
 conn.commit()
-#Close the connection to the database
-#conn.close()
+
+
+
+def _on_message(client, userdata, msg):
+# 	print("Received: Topic: %s Body: %s", msg.topic, msg.payload)
+	print(msg.topic+" "+str(msg.payload))
+	
+
+
 	 
 #Subscribed Topics 
 def _on_connect(mqttclient, userdata, flags, rc):
