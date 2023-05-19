@@ -19,17 +19,17 @@ def test(client, userdata, message):
   print("userdata:"+ str(userdata))
   print("message:"+ str(message.payload))
   payload=float(message.payload)
-conn =pymysql.connect(database="iot_diya",user="diyaupradeep",password="diyaupradeep",host="localhost")
-#Create a MySQL Cursor to that executes the SQLs
-cur=conn.cursor()
-#Create a dictonary containing the fields, name, age and place
-data={'topic':'IOT/test','data':message.payload}
-#Execute the SQL to write data to the database
-cur.execute("INSERT INTO `iot_data`(`topic`,`data`)VALUES(%(topic)s,%(data)s);",data)
-#Close the cursor
-#cur.close()
-#Commit the data to the database
-conn.commit()
+  conn =pymysql.connect(database="iot_diya",user="diyaupradeep",password="diyaupradeep",host="localhost")
+  #Create a MySQL Cursor to that executes the SQLs
+  cur=conn.cursor()
+  #Create a dictonary containing the fields, name, age and place
+  data={'topic':'IOT/test','data':message.payload}
+  #Execute the SQL to write data to the database
+  cur.execute("INSERT INTO `iot_data`(`topic`,`data`)VALUES(%(topic)s,%(data)s);",data)
+  #Close the cursor
+  #cur.close()
+  #Commit the data to the database
+  conn.commit()
 
 
 
