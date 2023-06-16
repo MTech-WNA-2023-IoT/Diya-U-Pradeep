@@ -14,4 +14,4 @@ print(json_api)
 
 print("Parsed")
 data= json_api['location']
-#print(data)
+print(data)
