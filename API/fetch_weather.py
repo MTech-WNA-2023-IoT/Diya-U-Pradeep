@@ -9,8 +9,8 @@ api=api_page.read()
 json_api=json.loads(api)
 #data1= json_api['current']
 #print(data1)
-print(Raw Data)
-#print(json_api)
+print("Raw Data")
+print(json_api)
 
 #print("Parsed")
 data= json_api['location']
