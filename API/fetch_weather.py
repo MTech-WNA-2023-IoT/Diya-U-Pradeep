@@ -7,8 +7,8 @@ url = "https://api.weatherapi.com/v1/current.json?key=4e06a340688349e18e31511112
 api_page = urlopen(url)
 api=api_page.read()
 json_api=json.loads(api)
-
-print("Raw Data")
+data= json_api['current']
+print("data")
 print(json_api)
 
 print("Parsed")
