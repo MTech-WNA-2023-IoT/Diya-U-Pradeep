@@ -12,6 +12,6 @@ json_api=json.loads(api)
 print("Raw Data")
 print(json_api)
 
-#print("Parsed")
+print("Parsed")
 data= json_api['location']
 #print(data)
