@@ -9,7 +9,7 @@ api=api_page.read()
 json_api=json.loads(api)
 data= json_api['current']
 print("data")
-print(json_api)
+#print(json_api)
 
 print("Parsed")
 data= json_api['location']
