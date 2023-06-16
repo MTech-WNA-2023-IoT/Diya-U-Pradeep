@@ -11,6 +11,6 @@ data= json_api['current']
 print("data")
 #print(json_api)
 
-print("Parsed")
+#print("Parsed")
 data= json_api['location']
-print(data)
+#print(data)
