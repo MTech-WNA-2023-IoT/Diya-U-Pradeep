@@ -35,7 +35,7 @@ import pymysql
 #Create a connection to MySQL Database 
 conn =pymysql.connect(database="iot_diya",user="diyaupradeep",password="diyaupradeep",host="localhost")
 sql = """
-INSERT INTO `weather_data` (`location_name`, `region`, `country`, `latitude`, `longitude`, `timezone_id`, `localtime_epoch`, `localtime`)
+INSERT INTO `weather_data` (`name`, `region`, `country`, `latitude`, `longitude`, `timezone_id`, `localtime_epoch`, `localtime`)
 VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
 """
 # Prepare the values for the SQL statement
