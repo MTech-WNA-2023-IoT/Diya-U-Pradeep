@@ -26,7 +26,7 @@ print(data)
     #database='API'
 #)
 # Execute the create table query
-db_cursor = db.cursor()
+# db_cursor = db.cursor()
 # db_cursor.execute(create_table_query)
 
 #Import pymysql module library
@@ -39,18 +39,21 @@ INSERT INTO `weather_data` (`location_name`, `region`, `country`, `latitude`, `l
 VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
 """
 # Prepare the values for the SQL statement
+cur=conn.cursor()
 values = (location_data["name"],location_data["region"],location_data["country"],location_data["lat"],location_data["lon"],location_data["tz_id"],location_data["localtime_epoch"],location_data["localtime"])
 
 
 # Execute the SQL statement
-db_cursor.execute(sql, values)
+cur.execute(sql, values)
+#db_cursor.execute(sql, values)
 # Commit the changes
 
-db.commit()
-
+#db.commit()
+conn.commit()
 # Close the connection
+conn.close()
 
-db.close()
+#db.close()
 
 # print("Raw Data")
 # print(json_api)
