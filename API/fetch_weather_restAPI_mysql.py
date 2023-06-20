@@ -1,7 +1,7 @@
 import json
 from urllib.request import urlopen
 import pymysql
-import mysql.connecor
+#import mysql.connecor
 
 #Create user account and obtain API key from https://www.weatherapi.com
 
@@ -19,12 +19,12 @@ print("Parsed")
 data= json_api['location']
 print(data)
 # Connect to MySQL database
-db = mysql.connector.connect(
-    host='0.0.0.0',
-    user='pi',
-    password='raspberry',
-    database='API'
-)
+#db = mysql.connector.connect(
+ #   host='0.0.0.0',
+  #  user='pi',
+   # password='raspberry',
+    #database='API'
+#)
 # Execute the create table query
 db_cursor = db.cursor()
 # db_cursor.execute(create_table_query)
@@ -33,7 +33,7 @@ db_cursor = db.cursor()
 import pymysql
 import mysql.connecor
 #Create a connection to MySQL Database 
-#conn =pymysql.connect(database="iot_diya",user="diyaupradeep",password="diyaupradeep",host="localhost")
+conn =pymysql.connect(database="iot_diya",user="diyaupradeep",password="diyaupradeep",host="localhost")
 sql = """
 INSERT INTO `weather_data` (`location_name`, `region`, `country`, `latitude`, `longitude`, `timezone_id`, `localtime_epoch`, `localtime`)
 VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
