@@ -10,16 +10,15 @@ url = "https://api.weatherapi.com/v1/current.json?key=4e06a340688349e18e31511112
 api_page = urlopen(url)
 api=api_page.read()
 json_api=json.loads(api)
-#data1= json_api['current']
-#print(data1)
-data=json_api
-print(data)
+data1= json_api['current']
+print(data1)
+
 #print("Raw Data")
 #print(json_api)
 
 #print("Parsed")
-#data= json_api['location']
-#print(data)
+data= json_api['location']
+print(data)
 # Connect to MySQL database
 #db = mysql.connector.connect(
  #   host='0.0.0.0',
@@ -44,7 +43,7 @@ VALUES (%s, %s, %s, %s, %s, %s, %s, %s,%s, %s, %s,%s)
 cur=conn.cursor()
 #values = (location["name"],location["region"],location["country"],location["lat"],location["lon"],location["tz_id"],location["localtime_epoch"],location["localtime"])
 
-values = (data["name"],data["region"],data["country"],data["lat"],data["lon"],data["tz_id"],data["localtime_epoch"],data["localtime"],data["humidity"],data["cloud"],data["pressure_in"])
+values = (data["name"],data["region"],data["country"],data["lat"],data["lon"],data["tz_id"],data["localtime_epoch"],data["localtime"],data1["humidity"],data1["cloud"],data1["pressure_in"])
 
 
 # Execute the SQL statement
