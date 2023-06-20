@@ -12,12 +12,14 @@ api=api_page.read()
 json_api=json.loads(api)
 #data1= json_api['current']
 #print(data1)
-print("Raw Data")
-print(json_api)
-
-print("Parsed")
-data= json_api['location']
+data=json_api
 print(data)
+#print("Raw Data")
+#print(json_api)
+
+#print("Parsed")
+#data= json_api['location']
+#print(data)
 # Connect to MySQL database
 #db = mysql.connector.connect(
  #   host='0.0.0.0',
@@ -35,14 +37,14 @@ import pymysql
 #Create a connection to MySQL Database 
 conn =pymysql.connect(database="iot_diya",user="diyaupradeep",password="diyaupradeep",host="localhost")
 sql = """
-INSERT INTO `weather_data` (`name`, `region`, `country`, `lat`, `lon`, `tz_id`, `localtime_epoch`, `localtime`)
-VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+INSERT INTO `weather_data` (`name`, `region`, `country`, `lat`, `lon`, `tz_id`, `localtime_epoch`, `localtime`,`cloud`, `humidity`, `pressure_in`)
+VALUES (%s, %s, %s, %s, %s, %s, %s, %s,%s, %s, %s,%s)
 """
 # Prepare the values for the SQL statement
 cur=conn.cursor()
 #values = (location["name"],location["region"],location["country"],location["lat"],location["lon"],location["tz_id"],location["localtime_epoch"],location["localtime"])
 
-values = (data["name"],data["region"],data["country"],data["lat"],data["lon"],data["tz_id"],data["localtime_epoch"],data["localtime"])
+values = (data["name"],data["region"],data["country"],data["lat"],data["lon"],data["tz_id"],data["localtime_epoch"],data["localtime"],data["humidity"],data["cloud"],data["pressure_in"])
 
 
 # Execute the SQL statement
