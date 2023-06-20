@@ -1,4 +1,4 @@
-import json
+ import json
 from urllib.request import urlopen
 import pymysql
 #import mysql.connecor
@@ -37,7 +37,7 @@ import pymysql
 conn =pymysql.connect(database="iot_diya",user="diyaupradeep",password="diyaupradeep",host="localhost")
 sql = """
 INSERT INTO `weather_data` (`name`, `region`, `country`, `lat`, `lon`, `tz_id`, `localtime_epoch`, `localtime`,`cloud`, `humidity`, `pressure_in`)
-VALUES (%s, %s, %s, %s, %s, %s, %s, %s,%s, %s, %s,%s)
+VALUES (%s, %s, %s, %s, %s, %s, %s, %s,%s, %s, %s)
 """
 # Prepare the values for the SQL statement
 cur=conn.cursor()
