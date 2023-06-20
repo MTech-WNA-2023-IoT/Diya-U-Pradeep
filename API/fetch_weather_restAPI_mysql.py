@@ -31,7 +31,7 @@ print(data)
 
 #Import pymysql module library
 import pymysql
-import mysql.connecor
+import mysql.connector
 #Create a connection to MySQL Database 
 conn =pymysql.connect(database="iot_diya",user="diyaupradeep",password="diyaupradeep",host="localhost")
 sql = """
