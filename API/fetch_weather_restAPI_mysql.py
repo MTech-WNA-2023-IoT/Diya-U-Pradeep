@@ -40,7 +40,7 @@ VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
 """
 # Prepare the values for the SQL statement
 cur=conn.cursor()
-values = (location_data["name"],location_data["region"],location_data["country"],location_data["lat"],location_data["lon"],location_data["tz_id"],location_data["localtime_epoch"],location_data["localtime"])
+values = (location["name"],location["region"],location["country"],location["lat"],location["lon"],location["tz_id"],location["localtime_epoch"],location["localtime"])
 
 
 # Execute the SQL statement
