@@ -1,4 +1,4 @@
- import json
+import json
 from urllib.request import urlopen
 import pymysql
 #import mysql.connecor
